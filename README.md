@@ -1,5 +1,5 @@
 <p align=center>
-    <img src="image.gif">
+    <img src="image.gif" width="500">
 </p>
 
 # twitcasting-realtime-chat
