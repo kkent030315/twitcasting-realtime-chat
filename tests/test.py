@@ -20,9 +20,9 @@ def main():
     thread = threading.Thread(target=thread_worker)
     thread.start()
 
-    time.sleep(5)
-
-    os.kill(os.getpid(), signal.SIGKILL)
+    time.sleep(3)
+    
+    os.kill(os.getpid(), signal.SIGTERM)
 
 
 if __name__ == "__main__":
