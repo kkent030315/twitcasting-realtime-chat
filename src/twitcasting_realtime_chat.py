@@ -1,6 +1,9 @@
 import twitcasting
 import websocket
 import json
+import os
+import cursor
+import sys
 from datetime import datetime
 
 
@@ -27,13 +30,20 @@ LOG_PREFIX = f"{Colors.GREEN}[TWCS_REALTIME_CHAT]{Colors.END} "
 
 
 class TwcsRealtimeChat():
-    
     def __init__(self, auto_reconnect: bool = True):
         self.auto_reconnect = True
 
         self.__ws = None
         self.__cached_user_id = None
         self.__cached_callback = None
+
+    
+    def __clear_console(self):
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+    
+    def __set_terminal_title(self, title: str):
+        sys.stdout.write(f"\x1b]2;{title}\x07")
 
     
     def __log(self, *args):
@@ -94,6 +104,12 @@ class TwcsRealtimeChat():
             when the message is arrived
         """
 
+        try:
+            self.__clear_console()
+            cursor.hide()
+        except:
+            pass
+
         # cache call parameters in order to reconnect
         self.__cached_user_id = user_id
         self.__cached_callback = callback
@@ -113,5 +129,10 @@ class TwcsRealtimeChat():
             on_error = self.__on_error,
             on_close = self.__on_close,
         )
+
+        try:
+            self.__set_terminal_title(f"twcs_realtime_chat ({video_id})")
+        except:
+            pass
 
         self.__ws.run_forever()

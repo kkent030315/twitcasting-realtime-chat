@@ -7,7 +7,7 @@ from twitcasting_realtime_chat import TwcsRealtimeChat
 def main() -> None:
     try:
         instance = TwcsRealtimeChat(auto_reconnect=True)
-        instance.run(user_id="yucchigame_cas")
+        instance.run(user_id="izayoikaede")
     except KeyboardInterrupt:
         pass
 
