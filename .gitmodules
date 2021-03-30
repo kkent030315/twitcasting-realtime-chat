@@ -1,0 +1,3 @@
+[submodule "twitcasting-py"]
+	path = twitcasting-py
+	url = https://github.com/kkent030315/twitcasting-py.git
