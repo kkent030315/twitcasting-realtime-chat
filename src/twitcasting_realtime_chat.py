@@ -84,7 +84,7 @@ class TwcsRealtimeChat():
 
 
     def __on_open(self, ws):
-        self.__log(f"connected has been opened")
+        self.__log(f"connection has been opened")
 
 
     def run(
