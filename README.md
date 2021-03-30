@@ -10,3 +10,28 @@
 
 # twitcasting-realtime-chat
 An unofficial comment viewer CLI for TwitCasting lives
+
+# Usage
+
+1. Install
+
+```bash
+pip install twitcasting-realtime-chat
+```
+
+2. Import
+
+```python3
+from twitcasting_realtime_chat import TwcsRealtimeChat
+```
+
+3. Use
+
+```python3
+instance = TwcsRealtimeChat(auto_reconnect=True)
+instance.run(user_id="user_id")
+```
+
+# License
+
+MIT
